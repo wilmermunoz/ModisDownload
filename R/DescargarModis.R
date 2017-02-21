@@ -33,6 +33,7 @@ search_xml <- readLines(tc <- textConnection(search_xml)); close(tc)
 tree_xml <- htmlTreeParse(search_xml,useInternalNodes = T)
 search_modis = unlist(xpathApply(tree_xml, '//search', xmlValue))
 
+
 m_mod <- Producto
 m_coll <- Coleccion
 m_start <- as.Date(InicioFecha)
