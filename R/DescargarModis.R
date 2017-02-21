@@ -28,7 +28,7 @@
 #'@examples DescargarModis(coleccion,producto,salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
 #'
 DescargarModis <- function(Coleccion, Producto,Salida, InicioFecha,FinFecha,LngMin,LatMin,LngMax,LatMax){
-search_xml <- getURL("https://wilmermunoz.github.io/ModisDownload/search.xml")
+search_xml <- getURL("https://wilmermunoz.github.io/index/SearchModis.xml")
 search_xml <- readLines(tc <- textConnection(search_xml)); close(tc)
 tree_xml <- htmlTreeParse(search_xml,useInternalNodes = T)
 search_modis = unlist(xpathApply(tree_xml, '//search', xmlValue))
