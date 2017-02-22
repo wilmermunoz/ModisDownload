@@ -45,5 +45,4 @@ latmin = -4.2
 lngmax = -66.8
 latmax = 13.3
 DescargarModis(coleccion,producto,salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
-
 }

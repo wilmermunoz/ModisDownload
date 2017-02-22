@@ -23,5 +23,4 @@ ListarAniosModis(5,"MOD03") #list()
 coleccion = ListarColeccionModis()[8]
 producto = ListarProductoModis(coleccion)[213]
 ListarAniosModis(coleccion,producto) #list()
-
 }

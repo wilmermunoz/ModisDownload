@@ -14,5 +14,4 @@ Este comando permite retornar el listado de las colecciones
 }
 \examples{
 ListarColeccionModis() #list()
-
 }
