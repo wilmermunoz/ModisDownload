@@ -33,27 +33,26 @@ library(ModisDownload)
 
 ## Ejemplos
 
-Listar colecciones:
+1. Listar colecciones:
 ```r
 coleccion = ListarColeccionModis()
 ```
 
+2. Listar productos:
 ```r
-Listar productos:
-
 coleccion = ListarColeccionModis()
 productos = ListarProductoModis(coleccion[8])
 ```
-```r
-Listar años disponibles:
 
+3. Listar años disponibles:
+```r
 coleccion = ListarColeccionModis()
 productos = ListarProductoModis(coleccion[8])
 anios = ListarAniosModis(coleccion[8],productos[213])
 ```
-```r
-Descargar productos:
 
+4. Descargar productos:
+```r
 coleccion = ListarColeccionModis()
 producto = ListarProductoModis(coleccion[8])
 salida = "c:/DOWNLOAD/MODIS/MOD03"
