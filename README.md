@@ -72,7 +72,5 @@ DescargarModis(coleccion[8],producto[213],salida,fecha_o,fecha_f,lngmin,latmin,l
 
 
 ---
----
-###Wilmer Muñoz,2017
----
+###Wilmer Muñoz - 2017
 ---
