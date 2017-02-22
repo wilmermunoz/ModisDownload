@@ -11,7 +11,7 @@ ListarColeccionModis <- function(){
 search_collection <- getURL("ftp://ladsweb.nascom.nasa.gov/allData/")
 search_collection <- readLines(tc <- textConnection(search_collection)); close(tc)
 list_collection<-strsplit(search_collection," ")
-text_collection <- "\nColección Disponibles: \n \n"
+text_collection <- "\nColeccion Disponibles: \n \n"
 
 list_col <- grep("dr", list_collection)
 list_collection_t <- list()

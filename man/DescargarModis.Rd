@@ -8,6 +8,8 @@ DescargarModis(Coleccion, Producto, Salida, InicioFecha, FinFecha, LngMin,
   LatMin, LngMax, LatMax)
 }
 \arguments{
+\item{Coleccion}{Corresponde a la colección del producto (int)}
+
 \item{Producto}{Corresponde al producto (char)}
 
 \item{Salida}{Corresponde al direcorio de salida (char)}
@@ -23,8 +25,6 @@ DescargarModis(Coleccion, Producto, Salida, InicioFecha, FinFecha, LngMin,
 \item{LngMax}{Corresponde al valor máximo de longitud (char,double) <Coordendas en WGS84-4326>}
 
 \item{LatMax}{Corresponde al valor máximo de latitud (char,double) <Coordendas en WGS84-4326>}
-
-\item{coleccion}{Corresponde a la colección del producto (int)}
 }
 \value{
 Retorna los archivos almacenados en la ruta de salida

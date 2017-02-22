@@ -2,7 +2,7 @@
 % Please edit documentation in R/ListarAniosModis.R
 \name{ListarAniosModis}
 \alias{ListarAniosModis}
-\title{Listar años del producto Modis}
+\title{Listar anios del producto Modis}
 \usage{
 ListarAniosModis(coleccion, producto)
 }
@@ -12,10 +12,10 @@ ListarAniosModis(coleccion, producto)
 \item{producto}{Corresponde al producto de Modis (char)}
 }
 \value{
-Retorna el vector del listado de años (list)
+Retorna el vector del listado de anios (list)
 }
 \description{
-Este comando permite retornar el listado de años existentes en el producto Modis seleccionado
+Este comando permite retornar el listado de anios existentes en el producto Modis seleccionado
 }
 \examples{
 ListarAniosModis(5,"MOD03") #list()

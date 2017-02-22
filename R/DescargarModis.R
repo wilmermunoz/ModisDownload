@@ -4,7 +4,7 @@
 #'@import XML
 #'@import RCurl
 #'@import httr
-#'@param coleccion Corresponde a la colección del producto (int)
+#'@param Coleccion Corresponde a la colección del producto (int)
 #'@param Producto Corresponde al producto (char)
 #'@param Salida Corresponde al direcorio de salida (char)
 #'@param InicioFecha Corresponde a la fecha inicial (char) <2001-01-01>
