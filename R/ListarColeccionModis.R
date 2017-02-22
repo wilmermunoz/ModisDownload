@@ -5,7 +5,7 @@
 #'@import RCurl
 #'@import httr
 #'@return Retorna el vector del listado de colecciones (list)
-#'@examples ListarColeccionModis() #list()
+#'@examples coleccion = ListarColeccionModis() #list()
 #'@export
 ListarColeccionModis <- function(){
 search_collection <- getURL("ftp://ladsweb.nascom.nasa.gov/allData/")
@@ -27,5 +27,5 @@ for(i in 1:length(list_collection_t) ){
 }
 
 cat(text_collection,"\nInfo:\thttps://modis-atmos.gsfc.nasa.gov/")
-return(collection)
+return(invisible(collection))
 }

@@ -16,8 +16,8 @@ Retorna el vector del listado de productos (list)
 Este comando permite retornar el listado de los productos modis
 }
 \examples{
-ListarProductoModis(5) #list()
+productos = ListarProductoModis(5) #list()
 
-coleccion = ListarColeccionModis()[8]
-ListarProductoModis(coleccion) #list()
+coleccion = ListarColeccionModis()
+ListarProductoModis(coleccion[8]) #list()
 }

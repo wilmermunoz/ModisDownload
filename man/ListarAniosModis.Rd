@@ -20,7 +20,7 @@ Este comando permite retornar el listado de años existentes en el producto Modi
 \examples{
 ListarAniosModis(5,"MOD03") #list()
 
-coleccion = ListarColeccionModis()[8]
-producto = ListarProductoModis(coleccion)[213]
-ListarAniosModis(coleccion,producto) #list()
+coleccion = ListarColeccionModis()
+producto = ListarProductoModis(coleccion[8])
+ListarAniosModis(coleccion[8],producto[213]) #list()
 }

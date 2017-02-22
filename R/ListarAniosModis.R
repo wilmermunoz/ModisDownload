@@ -9,9 +9,9 @@
 #'@return Retorna el vector del listado de años (list)
 #'@examples ListarAniosModis(5,"MOD03") #list()
 #'
-#'@examples coleccion = ListarColeccionModis()[8]
-#'@examples producto = ListarProductoModis(coleccion)[213]
-#'@examples ListarAniosModis(coleccion,producto) #list()
+#'@examples coleccion = ListarColeccionModis()
+#'@examples producto = ListarProductoModis(coleccion[8])
+#'@examples ListarAniosModis(coleccion[8],producto[213]) #list()
 #'@export
 ListarAniosModis <- function(coleccion, producto){
 input_collection <- coleccion
@@ -35,6 +35,6 @@ for(i in 1:length(list_anio_t) ){
 }
 
 cat(text_anio)
-return(anios_)
+return(invisible(anios_))
 
 }

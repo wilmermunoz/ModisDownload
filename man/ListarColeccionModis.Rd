@@ -13,5 +13,5 @@ Retorna el vector del listado de colecciones (list)
 Este comando permite retornar el listado de las colecciones
 }
 \examples{
-ListarColeccionModis() #list()
+coleccion = ListarColeccionModis() #list()
 }

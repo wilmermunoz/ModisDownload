@@ -16,8 +16,8 @@
 #'@return Retorna los archivos almacenados en la ruta de salida
 #'@examples DescargarModis(5,"MOD03","C:/DOWNLOAD/MODIS/MOD03/","2001-01-01","2001-12-31",-81.7,-4.2,-66.8,13.3)
 #'
-#'@examples coleccion = ListarColeccionModis()[8]
-#'@examples producto = ListarProductoModis(coleccion)[213]
+#'@examples coleccion = ListarColeccionModis()
+#'@examples producto = ListarProductoModis(coleccion[8])
 #'@examples salida = "c:/DOWNLOAD/MODIS/MOD03"
 #'@examples fecha_o = "2001-01-01"
 #'@examples fecha_f = "2001-12-31"
@@ -25,7 +25,7 @@
 #'@examples latmin = -4.2
 #'@examples lngmax = -66.8
 #'@examples latmax = 13.3
-#'@examples DescargarModis(coleccion,producto,salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
+#'@examples DescargarModis(coleccion[8],producto[213],salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
 #'@export
 DescargarModis <- function(Coleccion, Producto,Salida, InicioFecha,FinFecha,LngMin,LatMin,LngMax,LatMax){
 search_xml <- getURL("https://wilmermunoz.github.io/index/SearchModis.xml")

@@ -6,10 +6,10 @@
 #'@import httr
 #'@param coleccion Corresponde a la colección del producto (int)
 #'@return Retorna el vector del listado de productos (list)
-#'@examples ListarProductoModis(5) #list()
+#'@examples productos = ListarProductoModis(5) #list()
 #'
-#'@examples coleccion = ListarColeccionModis()[8]
-#'@examples ListarProductoModis(coleccion) #list()
+#'@examples coleccion = ListarColeccionModis()
+#'@examples ListarProductoModis(coleccion[8]) #list()
 #'@export
 
 ListarProductoModis <- function(coleccion){
@@ -34,6 +34,6 @@ ListarProductoModis <- function(coleccion){
   }
 
   cat(text_modis)
-  return(modis_)
+  return(invisible(modis_))
 
 }

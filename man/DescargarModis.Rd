@@ -35,8 +35,8 @@ Este comando permite realizar la descarga de los productos Modis
 \examples{
 DescargarModis(5,"MOD03","C:/DOWNLOAD/MODIS/MOD03/","2001-01-01","2001-12-31",-81.7,-4.2,-66.8,13.3)
 
-coleccion = ListarColeccionModis()[8]
-producto = ListarProductoModis(coleccion)[213]
+coleccion = ListarColeccionModis()
+producto = ListarProductoModis(coleccion[8])
 salida = "c:/DOWNLOAD/MODIS/MOD03"
 fecha_o = "2001-01-01"
 fecha_f = "2001-12-31"
@@ -44,5 +44,5 @@ lngmin = -81.7
 latmin = -4.2
 lngmax = -66.8
 latmax = 13.3
-DescargarModis(coleccion,producto,salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
+DescargarModis(coleccion[8],producto[213],salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
 }
