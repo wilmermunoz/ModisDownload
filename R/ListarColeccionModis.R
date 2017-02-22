@@ -6,7 +6,7 @@
 #'@import httr
 #'@return Retorna el vector del listado de colecciones (list)
 #'@examples ListarColeccionModis() #list()
-#'
+#'@export
 ListarColeccionModis <- function(){
 search_collection <- getURL("ftp://ladsweb.nascom.nasa.gov/allData/")
 search_collection <- readLines(tc <- textConnection(search_collection)); close(tc)

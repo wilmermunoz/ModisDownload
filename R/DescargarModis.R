@@ -26,7 +26,7 @@
 #'@examples lngmax = -66.8
 #'@examples latmax = 13.3
 #'@examples DescargarModis(coleccion,producto,salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
-#'
+#'@export
 DescargarModis <- function(Coleccion, Producto,Salida, InicioFecha,FinFecha,LngMin,LatMin,LngMax,LatMax){
 search_xml <- getURL("https://wilmermunoz.github.io/index/SearchModis.xml")
 search_xml <- readLines(tc <- textConnection(search_xml)); close(tc)

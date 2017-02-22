@@ -10,7 +10,7 @@
 #'
 #'@examples coleccion = ListarColeccionModis()[8]
 #'@examples ListarProductoModis(coleccion) #list()
-#'
+#'@export
 
 ListarProductoModis <- function(coleccion){
 

@@ -12,7 +12,7 @@
 #'@examples coleccion = ListarColeccionModis()[8]
 #'@examples producto = ListarProductoModis(coleccion)[213]
 #'@examples ListarAniosModis(coleccion,producto) #list()
-#'
+#'@export
 ListarAniosModis <- function(coleccion, producto){
 input_collection <- coleccion
 input_producto <- producto
