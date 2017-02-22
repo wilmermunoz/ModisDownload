@@ -9,4 +9,5 @@ Description: Este paquete permite la descarga de productos Modis, en mas
 License: GPL
 Encoding: UTF-8
 LazyData: true
+Depends: XML, RCurl, httr, R (>= 3.3) 
 RoxygenNote: 6.0.1
