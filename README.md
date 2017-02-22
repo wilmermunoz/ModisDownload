@@ -21,6 +21,8 @@ httr
 ## Instalación
 
 ```R
+install.packages("devtools")
+library(devtools)
 devtools::install_github("wilmermunoz/ModisDownload")
 ```
 
