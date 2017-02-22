@@ -66,7 +66,7 @@ for (i in 1:days_modis) {
     name_mod <- vect_product[grep(".hdf", vect_product)]
     cat(paste0(j,"/",length(list_ftp),"\t",name_mod,"\n"))
     #download.file(product,destfile=paste0(folder_mod,name_mod),quiet = TRUE)
-    GET(product, write_disk(paste0(folder_mod,name_mod), overwrite=TRUE), progress("down"))
+    GET(product, write_disk(paste0(folder_mod,"/",name_mod), overwrite=TRUE), progress("down"))
     cat("\n")
   }
   date_modis <- date_modis+1
