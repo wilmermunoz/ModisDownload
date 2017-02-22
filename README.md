@@ -33,9 +33,8 @@ library(ModisDownload)
 
 ## Ejemplos
 
-```r
 Listar colecciones:
-
+```r
 coleccion = ListarColeccionModis()
 ```
 
