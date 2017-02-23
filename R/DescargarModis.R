@@ -46,7 +46,7 @@ cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
 days_modis <- difftime(m_end,m_start,units = "days")
 date_modis <- m_start
 
-for (i in 1:days_modis) {
+for (i in 1:(as.numeric(days_modis, units="days")+1)) {
   modis_xml <- GET(paste0(base64Decode(search_modis),'product=',m_mod,
                           '&collection=',m_coll,'&start=',date_modis,'&stop=',date_modis,'&bbox=',box_modis),
                    config(cainfo = cafile))
