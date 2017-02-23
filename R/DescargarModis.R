@@ -45,7 +45,8 @@ cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
 
 days_modis <- difftime(m_end,m_start,units = "days")
 date_modis <- m_start
-
+name_modis <-''
+cont_modis <-0
 for (i in 1:(as.numeric(days_modis, units="days")+1)) {
   modis_xml <- GET(paste0(base64Decode(search_modis),'product=',m_mod,
                           '&collection=',m_coll,'&start=',date_modis,'&stop=',date_modis,'&bbox=',box_modis),
@@ -68,9 +69,16 @@ for (i in 1:(as.numeric(days_modis, units="days")+1)) {
     #download.file(product,destfile=paste0(folder_mod,name_mod),quiet = TRUE)
     GET(product, write_disk(paste0(folder_mod,"/",name_mod), overwrite=TRUE), progress("down"))
     cat("\n")
+    cont_modis<- cont_modis+1
+    name_modis[cont_modis] <- name_mod
   }
   date_modis <- date_modis+1
 }
+
+mod_matr<- as.matrix(name_modis)
+colnames(mod_matr)=c("Descargados")
+rownames(mod_matr)<- c(1:length(name_modis))
+return(mod_matr)
 
 }
 
