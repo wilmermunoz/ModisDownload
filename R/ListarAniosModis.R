@@ -19,7 +19,6 @@ input_producto <- producto
 search_anio <- getURL(paste0("ftp://ladsweb.nascom.nasa.gov/allData/",input_collection,"/",input_producto,"/"))
 search_anio <- readLines(tc <- textConnection(search_anio)); close(tc)
 list_anio<-strsplit(search_anio," ")
-text_anio <- "\nAnios Disponibles: \n \n"
 
 list_an <- grep("dr", list_anio)
 list_anio_t <- list()
@@ -30,11 +29,11 @@ for(j in 1:length(list_an)){
 anios_ <- ""
 for(i in 1:length(list_anio_t) ){
   anios_[i]<-toString(paste0(list_anio_t[[i]][length(list_anio_t[[i]])]))
-  text_anio<-paste0(text_anio,"[",i,"]\t",anios_[i],"\n")
 
 }
-
-cat(text_anio)
-return(invisible(anios_))
+anios_ <- as.matrix(anios_)
+colnames(anios_)=c("Anios Disponibles")
+rownames(anios_)<- c(1:length(list_anio_t))
+return(anios_)
 
 }
