@@ -25,6 +25,8 @@ DescargarModis(Coleccion, Producto, Salida, InicioFecha, FinFecha, LngMin,
 \item{LngMax}{Corresponde al valor máximo de longitud (char,double) <Coordendas en WGS84-4326>}
 
 \item{LatMax}{Corresponde al valor máximo de latitud (char,double) <Coordendas en WGS84-4326>}
+
+\item{LatMax}{Corresponde al tipo de archivo (char) <nc o hdf(default)>}
 }
 \value{
 Retorna los archivos almacenados en la ruta de salida
@@ -44,5 +46,7 @@ lngmin = -81.7
 latmin = -4.2
 lngmax = -66.8
 latmax = 13.3
-DescargarModis(coleccion[8],producto[213],salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
+tipo = "nc"
+
+DescargarModis(coleccion[8],producto[213],salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax, tipo)
 }

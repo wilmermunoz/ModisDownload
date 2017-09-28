@@ -25,15 +25,15 @@
 #'@examples latmin = -4.2
 #'@examples lngmax = -66.8
 #'@examples latmax = 13.3
-#'@examples DescargarModis(coleccion[8],producto[213],salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax)
+#'@examples tipo = nc o hdf(default)
+#'@examples DescargarModis(coleccion[8],producto[213],salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax,tipo)
 #'@export
 #'
-DescargarModis <- function(Coleccion, Producto,Salida, InicioFecha,FinFecha,LngMin,LatMin,LngMax,LatMax){
+DescargarModis <- function(Coleccion, Producto,Salida, InicioFecha,FinFecha,LngMin,LatMin,LngMax,LatMax, tipo =""){
 search_xml <- getURL("https://wilmermunoz.github.io/index/SearchModis.xml")
 search_xml <- readLines(tc <- textConnection(search_xml)); close(tc)
 tree_xml <- htmlTreeParse(search_xml,useInternalNodes = T)
 search_modis = unlist(xpathApply(tree_xml, '//search', xmlValue))
-
 
 m_mod <- Producto
 m_coll <- Coleccion
@@ -54,25 +54,42 @@ for (i in 1:(as.numeric(days_modis, units="days")+1)) {
 
   modis_html = htmlParse(modis_xml)
   list_mod <- unlist(xpathSApply(modis_html, "//link[@href]", xmlGetAttr, "href"))
-  list_ftp <- grep("ftp", list_mod)
+
+  if(tipo == "nc"){
+    list_ftp <- grep(".nc$", list_mod)
+
+  }
+  else {
+    list_ftp <- grep(".hdf$", list_mod)
+  }
   cat("\r", rep.int("#", getOption("width")), sep = "")
 
+  if(is.na(list_ftp[1])){
+    cat("\n","\t",m_mod,"\t",as.character(date_modis),"\t",length(list_ftp),"Archivos\n\n")
+    date_modis <- date_modis+1
 
-  cat("\n\t","\t",m_mod,"\t",toString(date_modis),"\t",length(list_ftp),"Archivos\n\n")
+  }else{
+    texttt= strsplit(list_mod[list_ftp[1]],'/')[[1]]
+
+    cat("\n","\t",m_mod,"\t",texttt[length(texttt)],"\t",length(list_ftp),"Archivos\n\n")
 
 
-  for(j in 1:length(list_ftp)){
-    product <- list_mod[list_ftp[j]]
-    vect_product <- strsplit(product, "/")[[1]]
-    name_mod <- vect_product[grep(".hdf", vect_product)]
-    cat(paste0(j,"/",length(list_ftp),"\t",name_mod,"\n"))
-    #download.file(product,destfile=paste0(folder_mod,name_mod),quiet = TRUE)
-    GET(product, write_disk(paste0(folder_mod,"/",name_mod), overwrite=TRUE), progress("down"))
-    cat("\n")
-    cont_modis<- cont_modis+1
-    name_modis[cont_modis] <- name_mod
+    for(j in 1:length(list_ftp)){
+      product <- list_mod[list_ftp[j]]
+      vect_product <- strsplit(product, "/")[[1]]
+      name_mod <- vect_product[grep(".hdf", vect_product)]
+      cat(paste0(j,"/",length(list_ftp),"\t",name_mod,"\n"))
+      #download.file(product,destfile=paste0(folder_mod,name_mod),quiet = TRUE)
+      GET(product, write_disk(paste0(folder_mod,"/",name_mod), overwrite=TRUE), progress("down"))
+      cat("\n")
+      cont_modis<- cont_modis+1
+      name_modis[cont_modis] <- name_mod
+    }
+    date_modis <- date_modis+1
+
   }
-  date_modis <- date_modis+1
+
+
 }
 
 mod_matr<- as.matrix(name_modis)
