@@ -64,8 +64,8 @@ lngmin = -81.7
 latmin = -4.2
 lngmax = -66.8
 latmax = 13.3
-tipo = "hdf"
-DescargarModis(coleccion[8],producto[213],salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax, tipo)
+tipo = "hdf" ó "ncdf"
+DescargarModis(6,"MOD13Q1",salida,fecha_o,fecha_f,lngmin,latmin,lngmax,latmax, tipo)
 
 ```
 
